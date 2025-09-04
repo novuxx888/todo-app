@@ -1,12 +1,119 @@
-# React + Vite
+Ahh you’re right 👍 — in my last message, I wrapped the whole README in a Markdown code block (`markdown … `), but then I closed it at the very end. That means if you copy the file as-is, it’ll show the entire README as “code” on GitHub instead of rendering nicely.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You should **remove the outer triple backticks** — the README file itself **is already Markdown**, so it doesn’t need to be fenced. Only code snippets *inside* the README should have backticks.
 
-Currently, two official plugins are available:
+Here’s the corrected full `README.md` — **ready to paste directly into your repo**:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+# TD · Todo (Gamified To-Do List)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A simple **React + Firebase** to-do list app where users can sign in with Google, add tasks, and gain XP + levels by completing them.
+Checking off a task **awards XP**, removes it, and plays a little **sprite celebration animation** 🎉
+
+---
+
+## ✨ Features
+
+* 🔑 Google Sign-In with Firebase Authentication
+* 📝 Per-user task storage in Firestore
+* ✅ Completing a task removes it from your list and gives you XP
+* 🆙 Level system (XP required grows each level)
+* 🎮 Animated pixel sprite that celebrates when you finish tasks
+* 🔄 Real-time updates via Firestore listeners
+
+---
+
+## 🚀 Tech Stack
+
+* [React](https://reactjs.org/) (via [Vite](https://vitejs.dev/))
+* [Firebase](https://firebase.google.com/) (Auth + Firestore)
+* Plain CSS for animation (`steps()` + `background-position`)
+* Pixel art sprite sheets
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/YOUR_USERNAME/todo-app.git
+cd todo-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Firebase
+
+Create a project in the [Firebase Console](https://console.firebase.google.com/) and enable:
+
+* Authentication → Google provider
+* Firestore Database
+
+Then copy your Firebase config into a `.env` file at the root:
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+### 4. Run locally
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 📁 Project Structure
+
+```
+public/
+  sprites/
+    hero_idle.png
+    hero_celebrate.png
+src/
+  components/
+    Sprite.jsx     # Sprite animation component
+  App.jsx          # Main app
+  firebase.js      # Firebase config
+  index.css        # Global styles + sprite keyframes
+```
+
+---
+
+## 🖼️ Sprites
+
+* **Idle:** `hero_idle.png` (1 frame, 32×32 px)
+* **Celebrate:** `hero_celebrate.png` (6 frames, 32×32 px each, laid out horizontally)
+
+Both go in `public/sprites/`.
+
+---
+
+## 🌐 Deployment
+
+You can deploy this anywhere React apps run:
+
+* [Vercel](https://vercel.com/) (recommended — easiest for Vite)
+* [Netlify](https://netlify.com/)
+* GitHub Pages (`npm run build` then serve `dist/`)
+
+---
+
+## 📜 License
+
+This project is for learning & fun. Use at your own risk. Sprites © their original creators.
+
+---
