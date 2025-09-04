@@ -66,3 +66,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@keyframes sprite-steps-x {
+  from { background-position-x: 0; }
+  to   { background-position-x: var(--sprite-end-x); }
+}
+@keyframes sprite-steps-y {
+  from { background-position-y: 0; }
+  to   { background-position-y: var(--sprite-end-y); }
+}
